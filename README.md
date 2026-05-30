@@ -14,13 +14,13 @@ Welcome to the **Active Directory Lab (Marvel Domain)** cyber range setup. This 
 ---
 
 ## 📑 Table of Contents
-- [🏗️ Lab Architecture & Network Topology](#️-lab-architecture--network-topology)
-  - [🖥️ Services & Hosts](#️-services--hosts)
-- [🚀 Quick Start (Linux & macOS)](#-quick-start-linux--macos)
-- [🪟 Setup Guide: Windows OS](#-setup-guide-windows-os)
-- [🛠️ Troubleshooting & Utilities](#️-troubleshooting--utilities)
-- [🔍 Initial Access / Footholds](#-initial-access--footholds)
-- [📄 License](#-license)
+- [🏗️ Lab Architecture & Network Topology](#lab-architecture--network-topology)
+  - [🖥️ Services & Hosts](#services--hosts)
+- [🚀 Quick Start (Linux & macOS)](#quick-start-linux--macos)
+- [🪟 Setup Guide: Windows OS](#setup-guide-windows-os)
+- [🛠️ Troubleshooting & Utilities](#troubleshooting--utilities)
+- [🔍 Initial Access / Footholds](#initial-access--footholds)
+- [📄 License](#license)
 
 ---
 
