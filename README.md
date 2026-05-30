@@ -1,8 +1,26 @@
-# Active Directory & Cyber Range Lab Setup Guide
+# 🛡️ Active Directory & Cyber Range Lab (Marvel Domain)
+
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 Welcome to the **Active Directory Lab (Marvel Domain)** cyber range setup. This lab simulates an enterprise network environment featuring a Samba Active Directory Domain Controller (`marvel.local`), multiple employee workstations, pivot servers, and vulnerable web portals. 
 
-This guide provides instructions to build, run, and interact with the lab environment on both **Linux** and **Windows** operating systems.
+> [!WARNING]
+> **Educational Use Only**
+> This repository contains deliberately vulnerable configurations and services. It is designed **strictly for educational purposes and authorized penetration testing**. Do not deploy this lab in a production environment or expose it to the public internet.
+
+---
+
+## 📑 Table of Contents
+- [🏗️ Lab Architecture & Network Topology](#️-lab-architecture--network-topology)
+  - [🖥️ Services & Hosts](#️-services--hosts)
+- [🚀 Quick Start (Linux & macOS)](#-quick-start-linux--macos)
+- [🪟 Setup Guide: Windows OS](#-setup-guide-windows-os)
+- [🛠️ Troubleshooting & Utilities](#️-troubleshooting--utilities)
+- [🔍 Initial Access / Footholds](#-initial-access--footholds)
+- [📄 License](#-license)
 
 ---
 
@@ -31,35 +49,31 @@ The lab consists of **11 containers** segmented across two Docker networks:
 
 ---
 
-## 🐧 Setup Guide: Linux OS
+## 🚀 Quick Start (Linux & macOS)
 
 ### 1. Prerequisites
-Ensure you have the following installed on your Linux distribution:
+Ensure you have the following installed:
 - **Docker Engine** (v20.10+)
 - **Docker Compose** (v2.0+)
 
 ### 2. Deploying the Lab
-1. Open a terminal and navigate to the project directory:
-   ```bash
-   cd "/media/hackerhalt/5FC99AF54C6CA6001/AD Lab"
-   ```
-2. Build and start the containers in detached mode:
-   ```bash
-   sudo docker compose up -d --build
-   ```
+To easily start the lab, we have provided convenient shell scripts:
 
-### 3. Verification & Troubleshooting Network Conflicts
-Because this lab uses static subnets, Docker may throw an error if the `172.168.1.0/24` subnet overlaps with existing interfaces or virtual networks. 
-* To fix network collisions, run the provided network fixer script:
-  ```bash
-  sudo bash fix_network.sh
-  ```
-* To check container health and status:
-  ```bash
-  sudo bash diagnose.sh
-  ```
+```bash
+# Clone the repository and enter the directory
+git clone git@github.com:haltacademy/Marvle-AD-Lab.git
+cd Marvle-AD-Lab
 
-### 4. Routing to the Internal Network (Optional)
+# Start the lab in the background
+./start.sh
+```
+
+To stop the lab when you are finished:
+```bash
+./stop.sh
+```
+
+### 3. Routing to the Internal Network (Optional)
 To access the internal subnet (`172.168.1.0/24`) directly from your Linux host machine, you can add a route pointing to the Docker gateway bridge:
 ```bash
 # Determine the Docker bridge interface name (e.g., br-xxxxxxxxxxxx)
@@ -74,29 +88,24 @@ Otherwise, use `machine1` (`10.10.1.1` via local port mappings) as a pivot host 
 ### 1. Prerequisites
 Ensure you have the following installed and configured:
 - **WSL 2 (Windows Subsystem for Linux)**
-- **Docker Desktop for Windows** (with WSL 2 backend integration enabled in Settings)
+- **Docker Desktop for Windows** (with WSL 2 backend integration enabled)
 - **Git for Windows** (or run commands inside a WSL terminal)
 
 ### 2. Deploying the Lab
 1. Open **PowerShell** or **Command Prompt** (as Administrator) and navigate to the project directory:
    ```powershell
-   cd "D:\AD Lab"  # Replace with your actual path
+   cd "C:\path\to\Marvle-AD-Lab"
    ```
 2. Build and start the containers:
    ```powershell
    docker compose up -d --build
    ```
+   *(To stop the lab, use `docker compose down`)*
 
-### 3. Verification
-Verify that all containers are running successfully:
-```powershell
-docker compose ps
-```
-
-### 4. Routing to the Internal Network on Windows
+### 3. Routing to the Internal Network on Windows
 Because Docker Desktop on Windows runs inside a virtualized utility VM (WSL2), you cannot easily add a direct host route to the internal `172.168.1.0/24` subnet. 
 
-#### Recommended Pivoting Approach:
+**Recommended Pivoting Approach:**
 Use **SSH Dynamic Port Forwarding** through `machine1` (which exposes SSH on port `2222` to the Windows host).
 1. Establish a SOCKS proxy:
    ```powershell
@@ -107,8 +116,28 @@ Use **SSH Dynamic Port Forwarding** through `machine1` (which exposes SSH on por
 
 ---
 
+## 🛠️ Troubleshooting & Utilities
+
+Because this lab uses static subnets, Docker may throw an error if the `172.168.1.0/24` subnet overlaps with existing interfaces or virtual networks. 
+
+* **Fix Network Collisions**: Run the provided network fixer script if you encounter IP allocation issues.
+  ```bash
+  sudo bash fix_network.sh
+  ```
+* **Diagnose Container Health**: Run the diagnostics script to check the status of all lab components.
+  ```bash
+  sudo bash diagnose.sh
+  ```
+
+---
+
 ## 🔍 Initial Access / Footholds
 
 * **FTP Server**: Accessible on `ftp://127.0.0.1:2121`. Tony Stark left a note here containing credentials and hints.
 * **HTTP Portal**: Accessible on `http://127.0.0.1:80`. Contains a web panel for verification utilities.
 * **SSH Pivot**: Accessible on `ssh -p 2222 tonystark@127.0.0.1`.
+
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
