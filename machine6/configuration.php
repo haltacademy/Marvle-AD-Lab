@@ -1,0 +1,44 @@
+<?php
+class JConfig {
+	public $offline = false;
+	public $offline_message = 'This site is down for maintenance.<br>Please check back again soon.';
+	public $display_offline_message = 1;
+	public $offline_image = '';
+	public $sitename = 'S.H.I.E.L.D. Joomla Portal';
+	public $editor = 'tinymce';
+	public $captcha = '0';
+	public $list_limit = 20;
+	public $access = 1;
+	public $debug = false;
+	public $debug_lang = false;
+	public $debug_lang_const = true;
+	public $dbtype = 'mysqli';
+	public $host = 'localhost';
+	public $user = 'joomla_user';
+	public $password = 'JoomlaSecretShield2026!';
+	public $db = 'joomla_db';
+	public $dbprefix = 'jos_';
+	public $dbencryption = 0;
+	public $dbsslverifyservercert = false;
+	public $dbsslkey = '';
+	public $dbsslcert = '';
+	public $dbsslca = '';
+	public $dbsslcipher = '';
+	public $secret = 'vM8E31g3n8U2i1o9';
+	public $gzip = false;
+	public $error_reporting = 'default';
+	public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
+	public $ftp_host = '';
+	public $ftp_port = '';
+	public $ftp_user = '';
+	public $ftp_pass = '';
+	public $ftp_root = '';
+	public $ftp_enable = false;
+	public $tmp_path = '/var/www/html/tmp';
+	public $log_path = '/var/www/html/administrator/logs';
+	public $live_site = '';
+	public $force_ssl = 0;
+	public $session_handler = 'database';
+	public $shared_session = false;
+	public $session_metadata = true;
+}

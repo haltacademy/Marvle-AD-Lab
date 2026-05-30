@@ -1,0 +1,5 @@
+name = Stark CMS Backup
+description = Automated backup tool for Stark Industries assets.
+core = 7.x
+package = Stark Industries
+dependencies[] = block

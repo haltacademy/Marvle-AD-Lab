@@ -1,0 +1,106 @@
+[2026/05/28 10:37:42,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:37:42,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 10:37:42.942047,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 10:37:42.942252,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:37:42.942299,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 10:37:43.021472,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/28 10:40:12,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:40:12,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 10:40:12.194757,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 10:40:12.194920,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:40:12.194961,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 10:40:12.270250,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/28 12:26:01.200577,  0] ../../source3/winbindd/winbindd_dual.c:1954(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=1)
+[2026/05/28 12:26:28,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:26:28,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 12:26:28.111732,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 12:26:28.112664,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:26:28.113610,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 12:26:28.276161,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/28 12:30:33,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:30:33,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 12:30:33.102274,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 12:30:33.102485,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:30:33.102565,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/28 12:30:33.206304,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/30 04:46:35,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 04:46:35,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 04:46:35.736025,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 04:46:35.736324,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 04:46:35.736360,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 04:46:35.819652,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/30 05:01:52,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:01:52,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:01:52.539642,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:01:52.541019,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:01:52.541087,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:01:52.673936,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/30 05:02:29,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:29,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:02:29.936228,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:02:29.936490,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:29.936542,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:02:30.053201,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2
+[2026/05/30 05:02:56,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:56,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:02:56.448738,  0] ../../source3/winbindd/winbindd.c:1440(main)
+  winbindd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:02:56.449237,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:56.449412,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for winbindd: File exists
+[2026/05/30 05:02:56.597301,  0] ../../source3/winbindd/winbindd_cache.c:3117(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 2

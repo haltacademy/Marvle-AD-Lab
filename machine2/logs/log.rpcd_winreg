@@ -1,0 +1,21 @@
+[2026/05/28 10:46:26,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:46:26,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for rpcd_winreg: File exists
+[2026/05/28 10:46:26,  0] ../../source3/rpc_server/rpc_worker.c:1125(rpc_worker_main)
+  rpcd_winreg version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 06:24:58,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 06:24:58,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for rpcd_winreg: File exists
+[2026/05/30 06:24:58,  0] ../../source3/rpc_server/rpc_worker.c:1125(rpc_worker_main)
+  rpcd_winreg version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 06:28:54,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 06:28:54,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for rpcd_winreg: File exists
+[2026/05/30 06:28:54,  0] ../../source3/rpc_server/rpc_worker.c:1125(rpc_worker_main)
+  rpcd_winreg version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022

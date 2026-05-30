@@ -1,0 +1,207 @@
+services:
+  machine1:
+    image: hackerhalt/ad-lab:machine1
+    build:
+      context: ./machine1
+      dockerfile: Dockerfile
+    container_name: target_machine1
+    hostname: ubuntu-server
+    privileged: true # Required for NFS service to export directories properly inside docker
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      lab_net:
+        ipv4_address: 10.10.1.1
+      internal_net:
+        ipv4_address: 172.168.1.1
+    ports:
+      - "80:80"      # Nginx
+      - "2121:2121"  # FTP (vsftpd)
+      - "2222:2222"  # SSH
+      - "1399:1399"  # SMB (NetBIOS)
+      - "4445:4445"  # SMB (Direct)
+      - "33061:33060" # MySQL
+      - "2525:2525"  # SMTP (Postfix)
+      - "20499:2049" # NFS
+      - "11111:111"  # Rpcbind (NFS)
+    restart: unless-stopped
+
+  machine2:
+    image: hackerhalt/ad-lab:machine2
+    build:
+      context: ./machine2
+      dockerfile: Dockerfile
+    container_name: target_machine2
+    hostname: marvel-dc
+    privileged: true
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.43
+    volumes:
+      - ./machine2/logs:/var/log/samba
+    restart: unless-stopped
+
+  stark-workstation:
+    image: hackerhalt/ad-lab:stark-workstation
+    build:
+      context: ./workstations/stark
+      dockerfile: Dockerfile
+    container_name: stark_workstation
+    hostname: stark-workstation
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.10
+    restart: unless-stopped
+
+  cap-workstation:
+    image: hackerhalt/ad-lab:cap-workstation
+    build:
+      context: ./workstations/cap
+      dockerfile: Dockerfile
+    container_name: cap_workstation
+    hostname: cap-workstation
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.11
+    restart: unless-stopped
+
+  blackwidow-workstation:
+    image: hackerhalt/ad-lab:blackwidow-workstation
+    build:
+      context: ./workstations/blackwidow
+      dockerfile: Dockerfile
+    container_name: blackwidow_workstation
+    hostname: blackwidow-workstation
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.12
+    restart: unless-stopped
+
+  hulk-workstation:
+    image: hackerhalt/ad-lab:hulk-workstation
+    build:
+      context: ./workstations/hulk
+      dockerfile: Dockerfile
+    container_name: hulk_workstation
+    hostname: hulk-workstation
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.13
+    restart: unless-stopped
+
+  spidey-workstation:
+    image: hackerhalt/ad-lab:spidey-workstation
+    build:
+      context: ./workstations/spidey
+      dockerfile: Dockerfile
+    container_name: spidey_workstation
+    hostname: spidey-workstation
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.14
+    restart: unless-stopped
+
+  target_machine3:
+    image: hackerhalt/ad-lab:target_machine3
+    build:
+      context: ./machine3
+      dockerfile: Dockerfile
+    container_name: target_machine3
+    hostname: stark-portal.marvel.local
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.65
+    depends_on:
+      - machine1
+      - machine2
+    restart: unless-stopped
+
+  target_machine4:
+    image: hackerhalt/ad-lab:target_machine4
+    build:
+      context: ./machine4
+      dockerfile: Dockerfile
+    container_name: target_machine4
+    hostname: rogers-portal.marvel.local
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.15
+    depends_on:
+      - machine1
+      - machine2
+    restart: unless-stopped
+
+  machine5:
+    image: hackerhalt/ad-lab:machine5
+    build:
+      context: ./machine5
+      dockerfile: Dockerfile
+    container_name: target_machine5
+    hostname: lpe-sandbox.marvel.local
+    privileged: true
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.69
+    ports:
+      - "22222:22"
+    depends_on:
+      - machine1
+      - machine2
+    restart: unless-stopped
+
+  machine6:
+    image: hackerhalt/ad-lab:machine6
+    build:
+      context: ./machine6
+      dockerfile: Dockerfile
+    container_name: target_machine6
+    hostname: shield-joomla.marvel.local
+    dns:
+      - 172.168.1.43
+      - 8.8.8.8
+    networks:
+      internal_net:
+        ipv4_address: 172.168.1.55
+    depends_on:
+      - machine1
+      - machine2
+    restart: unless-stopped
+
+networks:
+  lab_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.1.0/24
+          gateway: 10.10.1.254
+  internal_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.168.1.0/24
+          gateway: 172.168.1.254
