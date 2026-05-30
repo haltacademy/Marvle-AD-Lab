@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="docs/images/banner.png" alt="Marvle-AD-Lab Banner" width="100%" />
 
   # 🛡️ Marvle-AD-Lab — Active Directory & Cyber Range Lab
 
