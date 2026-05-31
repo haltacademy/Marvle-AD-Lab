@@ -1,0 +1,100 @@
+version: "3.8"
+
+networks:
+  ad_net:
+    driver: macvlan
+    driver_opts:
+      parent: eth0  # Adjust to your host interface
+    ipam:
+      config:
+        - subnet: "192.168.56.0/24"
+          gateway: "192.168.56.1"
+
+services:
+  ad-dc1:
+    image: nowsci/samba-domain
+    container_name: dc1-sev
+    hostname: dc1
+    environment:
+      DOMAIN: SEVENKINGDOMS.LOCAL
+      DOMAINPASS: AdminPass123
+      DNSFORWARDER: 1.1.1.1
+      HOSTIP: 192.168.56.10
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.10
+    privileged: true
+    volumes:
+      - dc1-data:/var/lib/samba
+
+  ad-dc2:
+    image: nowsci/samba-domain
+    container_name: dc2-north
+    hostname: dc2
+    environment:
+      DOMAIN: NORTH.SEVENKINGDOMS.LOCAL
+      DOMAINPASS: AdminPass123
+      HOSTIP: 192.168.56.11
+      DNSFORWARDER: 192.168.56.10
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.11
+    privileged: true
+    volumes:
+      - dc2-data:/var/lib/samba
+
+  ad-dc3:
+    image: nowsci/samba-domain
+    container_name: dc3-esso
+    hostname: dc3
+    environment:
+      DOMAIN: ESSOS.LOCAL
+      DOMAINPASS: AdminPass123
+      HOSTIP: 192.168.56.13
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.13
+    privileged: true
+    volumes:
+      - dc3-data:/var/lib/samba
+
+  webapp:
+    image: vulnerables/web-dvwa
+    container_name: webapp-castle
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.12
+
+  sql1:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql-castle
+    environment:
+      SA_PASSWORD: "Strong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.14
+
+  sql2:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql-essos
+    environment:
+      SA_PASSWORD: "Strong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.15
+
+  kali:
+    image: kalilinux/kali-rolling
+    container_name: kali-attack
+    networks:
+      ad_net:
+        ipv4_address: 192.168.56.16
+    tty: true
+    stdin_open: true
+
+volumes:
+  dc1-data: {}
+  dc2-data: {}
+  dc3-data: {}

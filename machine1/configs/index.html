@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.H.I.E.L.D. Security Database - Machine 1</title>
+    <style>
+        body {
+            background-color: #0c0d10;
+            color: #d12c2c;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: radial-gradient(circle, #1a1c23 10%, #0c0d10 90%);
+        }
+        .container {
+            border: 2px solid #d12c2c;
+            padding: 40px;
+            border-radius: 12px;
+            background: rgba(18, 20, 26, 0.95);
+            box-shadow: 0 0 25px rgba(209, 44, 44, 0.3);
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+            border-top: 8px solid #d12c2c;
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .subtitle {
+            color: #a0a6b5;
+            font-size: 0.9em;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .info {
+            font-size: 1.1em;
+            text-align: left;
+            margin: 20px 0;
+            line-height: 1.8;
+            border-left: 3px solid #d12c2c;
+            padding-left: 20px;
+            background: rgba(209, 44, 44, 0.03);
+            border-radius: 0 8px 8px 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .info p {
+            margin: 8px 0;
+            color: #a0a6b5;
+        }
+        .info span {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .status {
+            display: inline-block;
+            padding: 6px 18px;
+            background-color: rgba(209, 44, 44, 0.15);
+            color: #ff4d4d;
+            border: 1px solid #d12c2c;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(209, 44, 44, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(209, 44, 44, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(209, 44, 44, 0); }
+        }
+        .warning-msg {
+            color: #ffcc00;
+            font-size: 0.85em;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #626875;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+        .lab-info {
+            text-align: left;
+            margin: 25px 0 15px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(209, 44, 44, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+        .lab-info h2 {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(209, 44, 44, 0.3);
+            padding-bottom: 5px;
+        }
+        .lab-info ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #a0a6b5;
+        }
+        .lab-info li {
+            margin-bottom: 6px;
+        }
+        .lab-info li strong {
+            color: #ffffff;
+        }
+        .lab-info code {
+            background: rgba(209, 44, 44, 0.15);
+            color: #ff4d4d;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>S.H.I.E.L.D.</h1>
+        <div class="subtitle">Secure Network Directory</div>
+        <div class="status">CLASSIFIED ACCESS ONLY</div>
+        <div class="info">
+            <p><strong>Database ID:</strong> <span>STARK-LAB-01</span></p>
+            <p><strong>System Status:</strong> <span style="color: #4cd137;">Online / Secured</span></p>
+            <p><strong>IP (External):</strong> <span>10.10.1.1</span></p>
+            <p><strong>IP (Internal):</strong> <span>172.168.1.1</span></p>
+            <p><strong>Location:</strong> <span>Stark Tower Sub-Level 4</span></p>
+        </div>
+        <div class="lab-info">
+            <h2>Lab Environment Directory</h2>
+            <ul>
+                <li><strong>Machine 1 (Gateway):</strong> Initial pivot target featuring FTP, HTTP, SMB, SSH, MySQL, and NFS.</li>
+                <li><strong>Machine 2 (AD Controller):</strong> Active Directory Domain Controller (<code>MARVEL.LOCAL</code>) at <code>172.168.1.43</code>.</li>
+                <li><strong>Machine 3 (WordPress CMS):</strong> CMS target running at <code>172.168.1.65</code>.</li>
+                <li><strong>Machine 4 (Drupal CMS):</strong> CMS target running at <code>172.168.1.15</code>.</li>
+                <li><strong>Machine 5 (LPE Sandbox):</strong> Linux Privilege Escalation sandbox at <code>172.168.1.69</code>.</li>
+                <li><strong>Machine 6 (Joomla CMS):</strong> CMS target running at <code>172.168.1.55</code>.</li>
+                <li><strong>Workstations:</strong> 5 employee client machines within the <code>172.168.1.0/24</code> subnet.</li>
+            </ul>
+        </div>
+        <div class="warning-msg">
+            WARNING: Unauthorized access to Stark Industries property is punishable by thermal repulsion systems.
+        </div>
+        <div class="footer">
+            Property of S.H.I.E.L.D. Operation: Avenger Initiative
+        </div>
+    </div>
+</body>
+</html>

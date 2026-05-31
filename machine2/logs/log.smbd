@@ -1,0 +1,60 @@
+[2026/05/28 10:37:42,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:37:42,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: Operation not supported
+[2026/05/28 10:37:42.918819,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 10:40:12,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 10:40:12,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/28 10:40:12.177825,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 10:41:56.331877,  0] ../../source3/smbd/smb2_process.c:156(read_packet_remainder)
+  read_fd_with_timeout failed for client 172.168.1.254 read error = NT_STATUS_END_OF_FILE.
+[2026/05/28 12:26:28,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:26:28,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/28 12:26:28.025242,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/28 12:30:33,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/28 12:30:33,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/28 12:30:33.077764,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 04:46:35,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 04:46:35,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/30 04:46:35.701813,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:01:52,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:01:52,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/30 05:01:52.482261,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:02:29,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:29,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/30 05:02:29.900724,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:02:56,  0] ../../source3/lib/dumpcore.c:59(get_default_corepath)
+  Failed to create /var/log/samba/cores for user 0 with mode 0700
+[2026/05/30 05:02:56,  0] ../../source3/lib/dumpcore.c:256(dump_core_setup)
+  Unable to setup corepath for smbd: File exists
+[2026/05/30 05:02:56.390541,  0] ../../source3/smbd/server.c:1741(main)
+  smbd version 4.17.12-Debian started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2022
+[2026/05/30 05:48:05.055125,  0] ../../source3/smbd/smb2_process.c:156(read_packet_remainder)
+  read_fd_with_timeout failed for client 172.168.1.254 read error = NT_STATUS_END_OF_FILE.
